@@ -10,5 +10,5 @@ CREATE TABLE burgers (
   PRIMARY KEY (position)
 );
 
-SELECT * FROM top5000;
+SELECT * FROM burgers_db;
 
