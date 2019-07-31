@@ -31,7 +31,7 @@ function printQuestionMarks(num) {
     
 
 const orm = {
-    selectAll: function (table, cb) {
+    selectAll: function (tableInput, cb) {
         var queryString = "SELECT * FROM " + tableInput + ";";
         connection.query(queryString, function (err, res) {
             if (err) {
@@ -61,7 +61,7 @@ const orm = {
     });
   },
 
-  update: function(table, objColVals, condition, cb) {
+  updateOne: function(table, objColVals, condition, cb) {
     var queryString = "UPDATE " + table;
 
     queryString += " SET ";
@@ -70,12 +70,12 @@ const orm = {
     queryString += condition;
 
     console.log(queryString);
-    connection.query(queryString, function(err, result) {
+    connection.query(queryString, function(err, res) {
       if (err) {
         throw err;
       }
 
-      cb(result);
+      cb(res);
     });
   }
 };
