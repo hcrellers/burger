@@ -1,0 +1,50 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col">
+            <img class="img" src="/assets/images/bfd.png" alt="Burger">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h1 class="text-center">Eat-Da-Burger!</h1>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <h2 class="text-center">Burgers ready to devour</h2>
+            <ul>
+                {{#each burgers}}
+                 {{#unless devoured}}
+                     {{> burgers/burger-block devoured=false}}
+                 {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+        <div class="col-6 border-left">
+            <h2 class="text-center">Burgers have been devoured</h2>
+            <ul>
+                {{#each burgers}}
+                  {{#if devoured}}
+                      {{> burgers/burger-block devoured=true}}
+                  {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+    <form class="create-form">
+
+        <div class="form-group">
+            <label for="newburger">Burger Name:</label>
+            <input type="text" id="newburger" name="burger">
+
+        </div>
+
+        <button type="submit">Add Burger</button>
+    </form>
+
+    <a href="https://pngtree.com/">Graphics from pngtree.com</a>
+
+
+</div>
