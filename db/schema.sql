@@ -3,12 +3,12 @@ CREATE database burgers_db;
 
 USE burgers_db;
 
-CREATE TABLE burgers (
+CREATE TABLE burgers(
   id INT NOT NULL AUTO_INCREMENT,
   burger_name VARCHAR(50) NOT NULL,
   devoured BOOLEAN DEFAULT true,
-  PRIMARY KEY (position)
+  PRIMARY KEY (id)
 );
 
-SELECT * FROM burgers_db;
+
 
